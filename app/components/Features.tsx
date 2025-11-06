@@ -1,5 +1,7 @@
 'use client';
 
+import GlassCard from './GlassCard';
+
 const features = [
   {
     icon: (
@@ -50,43 +52,37 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6">
+    <section id="features" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-200 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold text-white/95 mb-6 tracking-tight">
             What We're Building
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-300/90 max-w-2xl mx-auto font-light">
             Core features we're developing based on paramedic feedback
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative p-6 rounded-2xl bg-charcoal-800/40 border border-gray-400/10 hover:border-teal-300/30 transition-all duration-normal hover:bg-charcoal-800/60"
-            >
+            <GlassCard key={index}>
               {/* Icon */}
-              <div className="w-12 h-12 mb-4 text-gray-300 group-hover:text-teal-300 transition-colors">
+              <div className="w-14 h-14 mb-5 text-gray-300 group-hover:text-teal-300 transition-colors duration-500">
                 {feature.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-200 mb-3">
+              <h3 className="text-xl font-semibold text-white/95 mb-3 group-hover:text-teal-300 transition-colors duration-300">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400/90 leading-relaxed font-light">
                 {feature.description}
               </p>
-
-              {/* Subtle glow effect on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-teal-300/0 group-hover:bg-teal-300/5 transition-colors pointer-events-none" />
-            </div>
+            </GlassCard>
           ))}
         </div>
       </div>
