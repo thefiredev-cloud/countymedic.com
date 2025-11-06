@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Silk speed={5} scale={1.5} color="#1D4E6B" noiseIntensity={1.2} rotation={0} />
+        <SilkBackground />
         {children}
       </body>
     </html>
