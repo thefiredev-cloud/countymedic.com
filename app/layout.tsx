@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import "./globals.css";
-
-const Silk = dynamic(() => import("./components/Silk"), { ssr: false });
+import SilkBackground from "./components/SilkBackground";
 
 export const metadata: Metadata = {
   title: "County Medic - Decision Support for Paramedics",
