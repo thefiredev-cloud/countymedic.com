@@ -69,14 +69,15 @@ export default function WaitlistForm() {
             </div>
           )}
 
-          {/* Netlify Form */}
-          <form
-            name="waitlist"
-            method="POST"
-            action="/?success=true"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-          >
+          {/* Error Message */}
+          {error && (
+            <div className="mb-6 p-5 bg-red-500/10 border border-red-400/30 rounded-xl text-red-400 text-center">
+              {error}
+            </div>
+          )}
+
+          {/* Form */}
+          <form name="waitlist" onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="waitlist" />
 
             {/* Honeypot for spam protection */}
