@@ -214,9 +214,10 @@ export default function WaitlistForm() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-teal-300 hover:bg-teal-400 text-slate-900 font-semibold rounded-xl transition-all duration-normal hover:scale-[1.02] hover:shadow-lg"
+              disabled={isSubmitting}
+              className="w-full px-8 py-4 bg-teal-300 hover:bg-teal-400 disabled:bg-gray-400 disabled:cursor-not-allowed text-slate-900 font-semibold rounded-xl transition-all duration-normal hover:scale-[1.02] hover:shadow-lg disabled:hover:scale-100"
             >
-              Sign Up
+              {isSubmitting ? 'Submitting...' : 'Sign Up'}
             </button>
 
             {/* Privacy Notice */}
