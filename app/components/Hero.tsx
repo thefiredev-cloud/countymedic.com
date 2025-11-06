@@ -1,5 +1,7 @@
 'use client';
 
+import AnimatedText from './AnimatedText';
+
 export default function Hero() {
   const handleGetStarted = () => {
     const signupSection = document.getElementById('signup');
@@ -7,13 +9,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-6 py-20">
+    <section className="relative min-h-[85vh] flex items-center justify-center px-6 py-24">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-teal-500/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative max-w-5xl mx-auto text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-teal-300/10 border border-teal-300/20 rounded-full">
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-10 bg-teal-300/10 backdrop-blur-sm border border-teal-300/20 rounded-full
+          hover:bg-teal-300/15 hover:border-teal-300/30 transition-all duration-300">
           <svg
             className="w-4 h-4 text-teal-300"
             viewBox="0 0 24 24"
@@ -31,21 +34,26 @@ export default function Hero() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-200 mb-6 leading-tight tracking-tight">
-          AI Tools Built for{' '}
-          <span className="bg-gradient-to-r from-teal-300 to-teal-400 bg-clip-text text-transparent">
-            Paramedics
-          </span>
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1] tracking-tight">
+          <AnimatedText
+            text="AI Tools Built for"
+            className="text-white/95 block mb-2"
+            delay={100}
+          />
+          <AnimatedText
+            text="Paramedics"
+            className="bg-gradient-to-r from-teal-300 via-teal-400 to-cyan-400 bg-clip-text text-transparent block"
+            delay={300}
+          />
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg md:text-xl text-gray-300 mb-4 max-w-3xl mx-auto leading-relaxed">
-          We're building decision support software for LA County Fire paramedics.
-          Protocol lookups, medication dosing, clinical guidance—accessible offline,
-          designed for the field.
+        <p className="text-xl md:text-2xl text-gray-200/90 mb-5 max-w-3xl mx-auto leading-relaxed font-light">
+          Decision support software for LA County Fire paramedics. Protocol lookups,
+          medication dosing, clinical guidance—accessible offline, designed for the field.
         </p>
 
-        <p className="text-base text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-gray-400/80 mb-12 max-w-2xl mx-auto font-light">
           Testing demand before full launch. Sign up to help shape what we build.
         </p>
 
@@ -53,15 +61,18 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <button
             onClick={handleGetStarted}
-            className="group px-8 py-4 bg-teal-300 hover:bg-teal-400 text-slate-900 font-semibold rounded-xl transition-all duration-normal hover:scale-105 hover:shadow-lg flex items-center gap-2"
+            className="group px-9 py-4.5 bg-gradient-to-r from-teal-400 to-teal-500 hover:from-teal-500 hover:to-teal-600
+              text-slate-900 font-semibold rounded-2xl transition-all duration-300
+              hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(79,209,197,0.3)]
+              flex items-center gap-2.5"
           >
             Get Started
             <svg
-              className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+              className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -72,7 +83,10 @@ export default function Hero() {
 
           <button
             onClick={handleGetStarted}
-            className="px-8 py-4 bg-charcoal-800/60 hover:bg-charcoal-800 border border-gray-400/30 hover:border-gray-400/50 text-gray-200 font-semibold rounded-xl transition-all duration-normal"
+            className="px-9 py-4.5 bg-white/5 backdrop-blur-sm hover:bg-white/10
+              border border-white/20 hover:border-teal-300/40
+              text-gray-200 font-semibold rounded-2xl
+              transition-all duration-300 hover:shadow-lg"
           >
             Learn More
           </button>
