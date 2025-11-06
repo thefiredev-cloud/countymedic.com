@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SilkBackground from "./components/SilkBackground";
 
 export const metadata: Metadata = {
   title: "County Medic - Decision Support for Paramedics",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="gradient-bg">
+        <SilkBackground />
         {children}
       </body>
     </html>
