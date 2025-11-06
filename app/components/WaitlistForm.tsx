@@ -1,22 +1,46 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 
 export default function WaitlistForm() {
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    // Check if redirected back from Netlify with success parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-      setShowSuccess(true);
-      // Scroll to the success message
-      setTimeout(() => {
-        const successElement = document.getElementById('successMessage');
-        successElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 100);
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const formData = new FormData(event.currentTarget);
+
+      // Submit to Netlify Forms endpoint
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      if (response.ok) {
+        setShowSuccess(true);
+        event.currentTarget.reset();
+
+        // Scroll to success message
+        setTimeout(() => {
+          const successElement = document.getElementById('successMessage');
+          successElement?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+      console.error('Form submission error:', err);
+    } finally {
+      setIsSubmitting(false);
     }
-  }, []);
+  };
 
   return (
     <section id="signup" className="py-20 px-6 bg-gradient-to-b from-teal-500/5 via-charcoal-800/20 to-transparent">
