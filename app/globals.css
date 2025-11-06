@@ -51,3 +51,8 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-bg {
+  background: linear-gradient(135deg, #1D4E6B 0%, #0f2838 50%, #1a1a1a 100%);
+  min-height: 100vh;
+}
