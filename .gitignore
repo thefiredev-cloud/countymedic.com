@@ -10,6 +10,10 @@ node_modules/
 dist/
 build/
 .netlify/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
 
 # IDE
 .vscode/
