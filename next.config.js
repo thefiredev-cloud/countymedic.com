@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Removed Three.js transpiling since it's not currently used
-  // transpilePackages: ['three', '@react-three/fiber', '@react-three/drei'],
 
   // Optimize dev server memory usage
   experimental: {

@@ -135,7 +135,7 @@ export default function EnterpriseContactForm() {
 
             {/* Email */}
             <div className="mb-5 md:mb-6">
-              <label htmlFor="email" className="block text-base sm:text-sm font-medium text-gray-200 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                 Email *
               </label>
               <div className="relative">
@@ -165,7 +165,7 @@ export default function EnterpriseContactForm() {
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 transition-opacity duration-200">
                     {emailError ? (
                       <svg
-                        className="w-6 h-6 sm:w-5 sm:h-5 text-red-500"
+                        className="w-5 h-5 text-red-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -180,7 +180,7 @@ export default function EnterpriseContactForm() {
                       </svg>
                     ) : (
                       <svg
-                        className="w-6 h-6 sm:w-5 sm:h-5 text-green-500"
+                        className="w-5 h-5 text-green-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -218,7 +218,7 @@ export default function EnterpriseContactForm() {
 
             {/* Role */}
             <div className="mb-6 md:mb-8">
-              <label htmlFor="role" className="block text-base sm:text-sm font-medium text-gray-200 mb-2">
+              <label htmlFor="role" className="block text-sm font-medium text-gray-200 mb-2">
                 Role (Optional)
               </label>
               <select

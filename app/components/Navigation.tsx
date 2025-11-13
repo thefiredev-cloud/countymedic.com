@@ -107,7 +107,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-2.5 group">
             {/* Medical Cross Icon */}
             <motion.div
-              className="flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9
+              className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11
                 rounded-lg bg-gradient-to-br from-red to-red-dark shadow-lg"
               whileHover={shouldReduceMotion ? {} : { scale: 1.08, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
@@ -142,7 +142,7 @@ export default function Navigation() {
               >
                 <Link
                   href={item.href}
-                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5
+                  className="px-4 py-3 text-gray-100 hover:text-white hover:bg-white/5
                     transition-colors font-medium text-base rounded-md
                     focus:outline-none focus:ring-2 focus:ring-red/50"
                 >
@@ -176,7 +176,7 @@ export default function Navigation() {
           <button
             ref={menuButtonRef}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden px-5 py-4 text-gray-300 hover:text-white hover:bg-white/5
+            className="md:hidden px-5 py-4 text-gray-100 hover:text-white hover:bg-white/5
               border border-white/0 hover:border-white/20 rounded-lg
               transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red/50"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -231,13 +231,13 @@ export default function Navigation() {
               animate="open"
               exit="closed"
             >
-              <div className="mt-4 pb-4 space-y-3">
+              <div className="mt-4 pb-4 space-y-4">
                 {navItems.map((item) => (
                   <motion.div key={item.name} variants={itemVariants}>
                     <Link
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors font-medium text-base"
+                      className="block py-3 px-4 text-gray-100 hover:text-white hover:bg-white/5 rounded-lg transition-colors font-medium text-base"
                     >
                       {item.name}
                     </Link>

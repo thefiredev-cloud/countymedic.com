@@ -18,7 +18,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen sm:min-h-[60vh] md:min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-16 md:py-24">
+    <section className="relative min-h-[75vh] sm:min-h-[60vh] md:min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-16 md:py-24">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy-900/20 via-transparent to-transparent pointer-events-none" />
 
@@ -40,7 +40,7 @@ export default function Hero() {
               repeat: Infinity,
               repeatDelay: 4
             }}
-            className="w-4 h-4 text-gray-300"
+            className="w-4 h-4 text-gray-100"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -50,14 +50,14 @@ export default function Hero() {
           >
             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
           </motion.svg>
-          <span className="text-sm font-medium text-gray-300">In Development</span>
+          <span className="text-sm font-medium text-gray-100">In Development</span>
         </motion.div>
 
         {/* Main Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-[1.1] tracking-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-[1.1] tracking-tight">
           <AnimatedText
             text="Clinical Decision Support"
-            className="text-white/95 block mb-2"
+            className="text-white block mb-2"
             delay={100}
           />
           <AnimatedText
@@ -68,11 +68,11 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-xl md:text-2xl text-gray-200/90 mb-4 md:mb-5 max-w-3xl mx-auto leading-relaxed font-light">
+        <p className="text-xl md:text-2xl text-gray-200 mb-4 md:mb-5 max-w-3xl mx-auto leading-relaxed font-light">
           Digital protocol and medication reference tool for paramedics in the field.
         </p>
 
-        <p className="text-base md:text-lg text-gray-400/80 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
+        <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-12 max-w-2xl mx-auto font-light">
           Currently in development for fire department EMS operations.
         </p>
 
@@ -81,7 +81,7 @@ export default function Hero() {
           initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-3"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           {/* Primary CTA */}
           <MagneticButton
