@@ -57,7 +57,6 @@ export default function Navigation() {
       height: 0,
       transition: {
         duration: shouldReduceMotion ? 0 : 0.2,
-        ease: 'easeInOut',
         when: 'afterChildren'
       }
     },
@@ -66,7 +65,6 @@ export default function Navigation() {
       height: 'auto',
       transition: {
         duration: shouldReduceMotion ? 0 : 0.25,
-        ease: 'easeOut',
         when: 'beforeChildren',
         staggerChildren: shouldReduceMotion ? 0 : 0.05,
         delayChildren: shouldReduceMotion ? 0 : 0.1
@@ -83,9 +81,7 @@ export default function Navigation() {
       opacity: 1,
       y: 0,
       transition: {
-        type: 'spring',
-        stiffness: 400,
-        damping: 50
+        duration: 0.3
       }
     }
   };
