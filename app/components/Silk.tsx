@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { forwardRef, useRef, useMemo, useLayoutEffect } from 'react';
+import { forwardRef, useRef, useMemo, useLayoutEffect, useEffect } from 'react';
 import { Color, ShaderMaterial, Mesh } from 'three';
 
 const hexToNormalizedRGB = (hex: string): [number, number, number] => {
@@ -96,6 +96,24 @@ const SilkPlane = forwardRef<Mesh, SilkPlaneProps>(function SilkPlane({ uniforms
       material.uniforms.uTime.value += 0.1 * delta;
     }
   });
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (ref && typeof ref !== 'function' && ref.current) {
+        const mesh = ref.current;
+        // Dispose geometry
+        if (mesh.geometry) {
+          mesh.geometry.dispose();
+        }
+        // Dispose material
+        if (mesh.material) {
+          const material = mesh.material as ShaderMaterial;
+          material.dispose();
+        }
+      }
+    };
+  }, [ref]);
 
   return (
     <mesh ref={ref}>
