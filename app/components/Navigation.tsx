@@ -3,6 +3,7 @@
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import ScrambledText from './ScrambledText';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -111,7 +112,7 @@ export default function Navigation() {
               whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
             >
-              County Medic
+              <ScrambledText text="County Medic" duration={1200} delay={500} />
             </motion.span>
           </Link>
 
