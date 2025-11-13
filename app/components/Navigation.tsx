@@ -104,21 +104,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <nav className="flex items-center justify-between">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            {/* Medical Cross Icon */}
-            <motion.div
-              className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11
-                rounded-lg bg-gradient-to-br from-red to-red-dark shadow-lg"
-              whileHover={shouldReduceMotion ? {} : { scale: 1.08, rotate: 5 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-              </svg>
-            </motion.div>
-
+          <Link href="/" className="flex items-center py-3 group" aria-label="County Medic home">
             <motion.span
-              className="text-lg sm:text-xl font-bold tracking-tight
+              className="text-xl sm:text-2xl md:text-[26px] lg:text-[28px] font-bold tracking-tight
                 bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent"
               whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
