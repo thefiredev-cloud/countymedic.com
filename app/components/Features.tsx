@@ -141,14 +141,9 @@ export default function Features() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 sm:mb-4">
+                <h3 className="text-xl md:text-2xl font-semibold text-white">
                   {feature.title}
                 </h3>
-
-                {/* Description */}
-                <p className="text-base text-gray-400 leading-relaxed">
-                  {feature.description}
-                </p>
               </GlassCard>
             </motion.div>
           ))}
