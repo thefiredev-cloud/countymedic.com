@@ -28,7 +28,7 @@ export default function Hero() {
           initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 mb-6 md:mb-6 bg-white/10 border border-white/20 rounded-full"
+          className="inline-flex items-center justify-center gap-2.5 px-5 py-2.5 mb-6 md:mb-6 bg-white/10 border border-white/20 rounded-full"
         >
           <motion.svg
             animate={shouldReduceMotion ? {} : {
@@ -40,7 +40,7 @@ export default function Hero() {
               repeat: Infinity,
               repeatDelay: 4
             }}
-            className="w-4 h-4 text-gray-100"
+            className="w-5 h-5 text-gray-100"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
