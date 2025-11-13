@@ -59,7 +59,7 @@ export default function EnterpriseContactForm() {
 
     try {
       // Submit to Netlify Forms endpoint
-      const response = await fetch('/__forms.html', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData as any).toString(),
