@@ -104,7 +104,7 @@ export default function Features() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="text-center mb-10 md:mb-16"
+          className="text-center mb-8 md:mb-12 lg:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4">
             Core Features
@@ -115,7 +115,7 @@ export default function Features() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -131,19 +131,24 @@ export default function Features() {
               <GlassCard className="h-full">
                 {/* Icon Container with Gradient Background */}
                 <motion.div
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.1, rotate: 5 }}
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.08, rotate: 3 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br from-red/20 to-red/5 p-4 sm:p-5 md:p-6 flex items-center justify-center mb-5 sm:mb-6 hover:from-red/30 hover:to-red/10 transition-colors duration-300"
+                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-2xl bg-gradient-to-br from-red/20 to-red/5 p-3 sm:p-4 md:p-4 flex items-center justify-center mb-4 sm:mb-5 hover:from-red/30 hover:to-red/10 transition-colors duration-300"
                 >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-red">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-red">
                     {feature.icon}
                   </div>
                 </motion.div>
 
                 {/* Title */}
-                <h3 className="text-xl md:text-2xl font-semibold text-white">
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3 md:mb-4">
                   {feature.title}
                 </h3>
+
+                {/* Description */}
+                <p className="text-sm md:text-base text-gray-400/90 leading-relaxed">
+                  {feature.description}
+                </p>
               </GlassCard>
             </motion.div>
           ))}
