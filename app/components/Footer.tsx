@@ -37,34 +37,34 @@ export default function Footer() {
       transition={{ duration: 0.6 }}
       className="border-t border-gray-400/20 bg-charcoal-800/90"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Brand Section */}
         <motion.div
-          className="mb-10 md:mb-16 pb-10 md:pb-16 border-b border-white/10"
+          className="mb-8 md:mb-12 pb-8 md:pb-12 border-b border-white/10"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex items-baseline gap-3 mb-3">
-            <div className="w-2 h-2 bg-red rounded-full flex-shrink-0 mt-1.5" />
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-5">
+            <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 bg-red rounded-full flex-shrink-0 shadow-md" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight leading-none">
               County Medic
             </h2>
           </div>
 
-          <p className="text-base sm:text-lg text-gray-300 mb-6 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl leading-relaxed">
             Clinical Decision Support for Fire Department EMS
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-xs sm:text-sm text-gray-400">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12 text-sm text-gray-400">
             <div>
-              <span className="block font-semibold text-white mb-1">Mission</span>
-              Enhance emergency medical decision-making
+              <span className="block font-semibold text-white mb-2 sm:mb-1.5">Mission</span>
+              <p className="leading-relaxed">Enhance emergency medical decision-making</p>
             </div>
             <div>
-              <span className="block font-semibold text-white mb-1">Trust</span>
-              Enterprise-grade security & compliance
+              <span className="block font-semibold text-white mb-2 sm:mb-1.5">Trust</span>
+              <p className="leading-relaxed">Enterprise-grade security & compliance</p>
             </div>
           </div>
         </motion.div>
@@ -75,14 +75,14 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-10"
         >
           {/* Company Column */}
           <motion.div variants={columnVariants}>
-            <h3 className="text-white font-semibold text-sm sm:text-base mb-3 md:mb-4">
+            <h3 className="text-white font-semibold text-sm md:text-base mb-4 md:mb-5">
               Company
             </h3>
-            <ul className="space-y-3 md:space-y-2.5">
+            <ul className="space-y-3">
               <li>
                 <motion.a
                   href="#"
@@ -118,10 +118,10 @@ export default function Footer() {
 
           {/* Legal Column */}
           <motion.div variants={columnVariants}>
-            <h3 className="text-white font-semibold text-sm sm:text-base mb-3 md:mb-4">
+            <h3 className="text-white font-semibold text-sm md:text-base mb-4 md:mb-5">
               Legal
             </h3>
-            <ul className="space-y-3 md:space-y-2.5">
+            <ul className="space-y-3">
               <li>
                 <motion.a
                   href="/privacy"
@@ -147,10 +147,10 @@ export default function Footer() {
 
           {/* Contact Column */}
           <motion.div variants={columnVariants}>
-            <h3 className="text-white font-semibold text-sm sm:text-base mb-3 md:mb-4">
+            <h3 className="text-white font-semibold text-sm md:text-base mb-4 md:mb-5">
               Contact
             </h3>
-            <ul className="space-y-3 md:space-y-2.5">
+            <ul className="space-y-3">
               <li>
                 <motion.a
                   href="mailto:contact@thefiredev.com"
@@ -166,12 +166,12 @@ export default function Footer() {
         </motion.div>
 
         {/* Animated Divider */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden my-8 md:my-10">
           <motion.div
             initial={shouldReduceMotion ? { scaleX: 1 } : { scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="h-px bg-gray-400/20 origin-left"
           />
         </div>
@@ -182,7 +182,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="pt-6 md:pt-8"
+          className="pt-2 pb-4"
         >
           <div className="text-xs text-gray-500 text-center">
             &copy; 2025 County Medic. All rights reserved.
