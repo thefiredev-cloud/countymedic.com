@@ -72,25 +72,30 @@ export default function FAQ() {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-5">
           {faqs.map((faq, index) => (
-            <GlassCard key={index} className="cursor-pointer">
+            <GlassCard
+              key={index}
+              className={`cursor-pointer transition-all duration-300 ${
+                openIndex === index ? 'ring-1 ring-red/40' : ''
+              }`}
+            >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left"
+                className="w-full text-left group"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-6">
                   {/* Question */}
-                  <h3 className="text-base sm:text-lg font-semibold text-white pr-4 flex-1">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white pr-4 flex-1 group-hover:text-gray-100 transition-colors">
                     {faq.question}
                   </h3>
 
                   {/* Chevron Icon */}
                   <div
-                    className={`flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 text-red transition-transform duration-300 ${
-                      openIndex === index ? 'rotate-180' : ''
+                    className={`flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 transition-all duration-300 ${
+                      openIndex === index ? 'rotate-180 text-red' : 'text-red/70 group-hover:text-red'
                     }`}
                     aria-hidden="true"
                   >
@@ -98,7 +103,7 @@ export default function FAQ() {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
@@ -111,12 +116,12 @@ export default function FAQ() {
                 <div
                   id={`faq-answer-${index}`}
                   className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-96 mt-3 sm:mt-4' : 'max-h-0'
+                    openIndex === index ? 'max-h-96 mt-5 sm:mt-6 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
                 >
-                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>
