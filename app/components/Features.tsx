@@ -115,7 +115,7 @@ export default function Features() {
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -131,11 +131,11 @@ export default function Features() {
               <GlassCard className="h-full">
                 {/* Icon Container with Gradient Background */}
                 <motion.div
-                  whileHover={shouldReduceMotion ? {} : { scale: 1.08, rotate: 3 }}
+                  whileHover={shouldReduceMotion ? {} : { scale: 1.05, rotate: 2 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-2xl bg-gradient-to-br from-red/20 to-red/5 p-3 sm:p-4 md:p-4 flex items-center justify-center mb-4 sm:mb-5 hover:from-red/30 hover:to-red/10 transition-colors duration-300"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-red/20 to-red/5 p-3 flex items-center justify-center mb-4 hover:from-red/30 hover:to-red/10 transition-colors duration-300"
                 >
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-red">
+                  <div className="w-6 h-6 sm:w-7 sm:h-7 text-red">
                     {feature.icon}
                   </div>
                 </motion.div>
